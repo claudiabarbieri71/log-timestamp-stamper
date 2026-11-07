@@ -1,0 +1,17 @@
+{
+  "name": "log-timestamp-stamper",
+  "version": "0.1.0",
+  "description": "Generates unique increasing integers to timestamp log entries from concurrent tasks.",
+  "type": "module",
+  "main": "src/index.js",
+  "exports": "./src/index.js",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node --test"
+  },
+  "keywords": [],
+  "license": "BSD-3-Clause",
+  "dependencies": {}
+}
