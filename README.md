@@ -41,3 +41,10 @@ Returns the most recently issued stamp without advancing the sequence. Before th
 ## Edge cases
 
 If the clock moves backwards, stamps continue from `last + 1` rather than following the clock. This is intentional: it guarantees uniqueness and ordering. The clock function is called exactly once per `stamp()` call, so a clock that returns non-finite numbers causes `stamp()` to throw a `TypeError` rather than producing an invalid stamp.
+
+## Design notes
+
+The window stores values eagerly rather than keeping running aggregates. Running
+sums drift with floating point over long streams, and recomputing from a small
+buffer is cheap enough that the drift is not worth the speed.
+
